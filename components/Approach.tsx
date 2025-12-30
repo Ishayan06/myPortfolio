@@ -56,49 +56,76 @@ const Card = ({
   title: string;
   icon: React.ReactNode;
   children?: React.ReactNode;
-  className?:string;
-  description?:string;
+  className?: string;
+  description?: string;
 }) => {
   const [hovered, setHovered] = React.useState(false);
+
   return (
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={cn(className,"border border-black/[0.2] group/canvas-card flex items-center justify-center dark:border-white/[0.2]  max-w-sm  lg:w-full mx-auto p-4 relative h-[15rem] lg:h-[30rem] relative"
-      )}>
+      className={cn(
+        className,
+        "border border-black/[0.2] flex items-center justify-center dark:border-white/[0.2] max-w-sm lg:w-full mx-auto p-4 relative h-[15rem] lg:h-[30rem]"
+      )}
+    >
       <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
       <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
       <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
       <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
 
+      {/* Background Effect */}
       <AnimatePresence>
         {hovered && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="h-full w-full absolute inset-0"
+            className="absolute inset-0 h-full w-full"
           >
             {children}
           </motion.div>
         )}
       </AnimatePresence>
 
-      <div className="relative z-20">
-        <div className="text-center group-hover/canvas-card:-translate-y-4 absolute top-[50%]  left-[50%] md:left-[0%] group-hover/canvas-card:opacity-0 transition duration-200 w-full  mx-auto flex items-center justify-center">
-          <h1 className="border border-white  rounded-full p-2">
-            {icon}
+      <div className="relative z-20 text-center w-full">
+        {/* Icon */}
+        {!hovered && (
+          <div className="absolute inset-0 flex items-center justify-center transition duration-200">
+            <h1 className="border border-white rounded-full p-2">
+              {icon}
             </h1>
-        </div>
-        <h2 className="dark:text-white text-xl lg:text-3xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
+          </div>
+        )}
+
+        {/* Title */}
+        <h2
+          className={cn(
+            "text-xl lg:text-3xl font-bold transition-all duration-200",
+            hovered
+              ? "opacity-100 -translate-y-2 text-white"
+              : "opacity-0 translate-y-4"
+          )}
+        >
           {title}
         </h2>
-        <h2 className="dark:text-white text-base lg:text-xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
+
+        {/* Description */}
+        <p
+          className={cn(
+            "text-base lg:text-xl mt-4 transition-all duration-200",
+            hovered
+              ? "opacity-100 -translate-y-2 text-white"
+              : "opacity-0 translate-y-4"
+          )}
+        >
           {description}
-        </h2>
+        </p>
       </div>
     </div>
   );
 };
+
 
 const AceternityIcon = () => {
   return (

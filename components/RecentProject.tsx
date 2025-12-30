@@ -9,7 +9,7 @@
     return (
       
           <div className="py-20" id="projects">
-        <h1 className="md:text-4xl text-xl  flex items-center gap-2 justify-center ">
+        <h1 className="md:text-4xl text-xl text-center mx-auto   lg:flex items-center gap-2 justify-center ">
           A small section of {"  "}
           <span className="text-purple-500 tracking-[0.25em]">
             recent project
