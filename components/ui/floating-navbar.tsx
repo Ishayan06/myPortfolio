@@ -75,7 +75,6 @@ export const FloatingNav = ({
                 isActive && "text-purple-500 dark:text-purple-400"
               )}
             >
-              <span className="block ">{navItem.icon}</span>
               <span className="block">{navItem.name}</span>
             </a>
           );
