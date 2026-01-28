@@ -23,13 +23,13 @@ const Hero = () => {
         <Spotlight className="top-28 left-80 h-[80vh] w-[50vw]" fill="blue" />
       </div>
 
-      <div className="absolute top-0 left-0 flex h-screen w-full items-center justify-center bg-white dark:bg-black-100">
+      {/* ✅ ONLY CHANGE IS HERE (forced dark purple background) */}
+      <div className="absolute top-0 left-0 flex h-screen w-full items-center justify-center bg-[#0b0616]">
         <div
           className={cn(
             "absolute inset-0",
             "[background-size:40px_40px]",
-            "[background-image:linear-gradient(to_right,rgba(255,255,255,0.04)_0.5px,transparent_0.5px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_0.5px,transparent_0.5px)]",
-            "dark:[background-image:linear-gradient(to_right,rgba(255,255,255,0.03)_0.5px,transparent_0.5px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_0.5px,transparent_0.5px)]"
+            "[background-image:linear-gradient(to_right,rgba(255,255,255,0.04)_0.5px,transparent_0.5px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_0.5px,transparent_0.5px)]"
           )}
         />
       </div>
@@ -70,26 +70,16 @@ const Hero = () => {
 
         {/* Divider – lg only */}
         <div className="hidden lg:block bg-white w-1 h-[400px]" />
-          {/* photo part */}
-        {/* <motion.div
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 2, ease: "easeOut" }}
-          className="flex justify-center my-5 lg:my-0 items-center lg:max-w-[20vw]"
-        >
-          <img src="me.jpeg" alt="" />
-        </motion.div> */}
-         <motion.div
+
+        <motion.div
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 2, ease: "easeOut" }}
           className="flex justify-center my-5 lg:my-0 items-center lg:max-w-[20vw]"
         >
           <div className="relative group">
-            {/* Gradient border background */}
             <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-300" />
 
-            {/* Image container with rounded corners and shadow */}
             <div className="relative bg-white dark:bg-black-100 rounded-lg p-1 overflow-hidden shadow-2xl">
               <img
                 src="me.jpeg"
