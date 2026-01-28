@@ -81,7 +81,7 @@ export const projects = [
     des: "Created a modern e-commerce platform using React.js for the frontend and Node.js with MongoDB for backend services.",
     img: "/ecomerce.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "https://github.com/adrianhajdin?tab=repositories",
+    link: "https://e-commercefrontend-wine.vercel.app/",
   },
   {
     id: 2,
@@ -97,7 +97,7 @@ export const projects = [
     des: "Built an interactive city-map simulation using HTML, CSS, and JavaScript to model survival strategies in real time",
     img: "/zombie.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "https://github.com/adrianhajdin/ai_saas_app",
+    link: "https://zombie-apocalypse-three.vercel.app/",
   },
   {
     id: 4,
@@ -105,7 +105,7 @@ export const projects = [
     des: "Built a full-stack expense tracking application with categorized credit and debit entries.",
     img: "/expense.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "https://github.com/adrianhajdin/iphone",
+    link: "https://expense-frontend-delta-ten.vercel.app/app",
   },
 ];
 
